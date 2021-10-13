@@ -18,6 +18,9 @@ public class HomePage {
     @FindBy(linkText = "Forgot Password")
     private WebElement forgotPassword;
 
+    @FindBy(linkText = "Hovers")
+    private WebElement hovers;
+
     public HomePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -35,5 +38,10 @@ public class HomePage {
     public ForgotPasswordPage clickForgotPassword(){
         forgotPassword.click();
         return new ForgotPasswordPage(driver);
+    }
+
+    public HoversPage clickHovers(){
+        hovers.click();
+        return new HoversPage(driver);
     }
 }
