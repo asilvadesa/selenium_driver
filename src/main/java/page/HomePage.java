@@ -15,6 +15,9 @@ public class HomePage {
     @FindBy(linkText = "Dropdown")
     private WebElement dropdownLink;
 
+    @FindBy(linkText = "Forgot Password")
+    private WebElement forgotPassword;
+
     public HomePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -27,5 +30,10 @@ public class HomePage {
     public DropDrownPage clickDropdown(){
         dropdownLink.click();
         return new DropDrownPage(driver);
+    }
+
+    public ForgotPasswordPage clickForgotPassword(){
+        forgotPassword.click();
+        return new ForgotPasswordPage(driver);
     }
 }
