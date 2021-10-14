@@ -24,6 +24,9 @@ public class HomePage {
     @FindBy(linkText = "Key Presses")
     private WebElement keyPresses;
 
+    @FindBy(linkText = "Horizontal Slider")
+    private WebElement horizontalSlider;
+
     public HomePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -51,5 +54,10 @@ public class HomePage {
     public KeyPressesPage clickKeyPresses(){
         keyPresses.click();
         return new KeyPressesPage(driver);
+    }
+
+    public HorizontalSliderPage clickHorizontalSlider(){
+        horizontalSlider.click();
+        return new HorizontalSliderPage(driver);
     }
 }
