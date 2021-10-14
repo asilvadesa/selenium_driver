@@ -21,6 +21,9 @@ public class HomePage {
     @FindBy(linkText = "Hovers")
     private WebElement hovers;
 
+    @FindBy(linkText = "Key Presses")
+    private WebElement keyPresses;
+
     public HomePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -43,5 +46,10 @@ public class HomePage {
     public HoversPage clickHovers(){
         hovers.click();
         return new HoversPage(driver);
+    }
+
+    public KeyPressesPage clickKeyPresses(){
+        keyPresses.click();
+        return new KeyPressesPage(driver);
     }
 }
