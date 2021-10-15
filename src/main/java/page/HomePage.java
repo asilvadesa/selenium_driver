@@ -27,6 +27,9 @@ public class HomePage {
     @FindBy(linkText = "Horizontal Slider")
     private WebElement horizontalSlider;
 
+    @FindBy(linkText = "JavaScript Alerts")
+    private WebElement javaScriptAlert;
+
     public HomePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -59,5 +62,10 @@ public class HomePage {
     public HorizontalSliderPage clickHorizontalSlider(){
         horizontalSlider.click();
         return new HorizontalSliderPage(driver);
+    }
+
+    public AlertPage clickJavaScriptAlert(){
+        javaScriptAlert.click();
+        return new AlertPage(driver);
     }
 }
